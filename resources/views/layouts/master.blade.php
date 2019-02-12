@@ -9,6 +9,6 @@
 
 
 	{!! Html::script('js/jquery-2.1.0.min.js') !!}
-	{!! Html::script('js/dropdown.js') !!}
+	{!! Html::script('js/dropdown2.js') !!}
 </body>
 </html>

@@ -11,6 +11,7 @@
         	@endforeach
    		 </select>
 		--}}
-		{!! Form::select('state', $states->pluck('name')) !!}
-		{!! Form::select('') !!}
+		{!! Form::select('state', $states->pluck('name'), null, ['id'=>'state' ,'placeholder'=>'selecciona' ]) !!}
+		{{--se plantea lo siguiente de "ahi" se trabaja el scritp de ajax totalmente--}}
+		{!! Form::select('town',['placeholder'=>'Selecciona'], null,['id'=>'town']) !!}
 	@endsection

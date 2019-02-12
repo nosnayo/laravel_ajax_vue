@@ -18,3 +18,4 @@ Route::get('GetCountries','ServiceController@GetCountries');
 Route::get('GetStates/{id}','ServiceController@GetStates');
 
 Route::resource('/states','StateController');
+Route::get('towns/{id}','StateController@getTowns');

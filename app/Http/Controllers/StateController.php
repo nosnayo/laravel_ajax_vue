@@ -16,16 +16,28 @@ class StateController extends Controller
     {
         $states = State::all();
        	return view('index',compact('states'));
-        
 
+        //otra forma de envio sin revisar
+        //return view('index')->with('states', $states)
+        //Otra forma arreglo
+        /*return view('index')->with([
+            'states' => 'el estado es',
+            'otro' => 'el otro'
+        ]);*/
+    }
 
-        //$products = \App\Product::paginate();
-        //return view('home', compact('products'));
+    public function getTowns(Request $request, $id){
 
-        //
-        
-        //return view('index',compact('state'));
-        //return response()->json($data);
+        //Request o peticion mediante ajax
+        //dd($id);
+        if($request->ajax()){
+            //llamada ak metodo del modelo(clase)
+            $id_busqueda = $id + 1;
+            $towns = Town::towns($id_busqueda);
+            //respuesta en tipo json
+            return response()->json($towns);
+
+        }
     }
 
 }
